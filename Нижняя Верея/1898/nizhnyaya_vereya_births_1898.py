@@ -1,0 +1,43 @@
+from verso.ru.dsl import (Gender, Month, RecordDefaults, birth, birth_month, birth_records, page,
+                          person)
+from verso.ru.dsl.statuses import PEASANT_FEMALE, PEASANT_MALE
+
+nizhnyaya_vereya_births_1898 = birth_records(
+    "ЦАНО", "2800", "1", "14", "Нижняя Верея", "Николаевская",
+    1898,
+    *page("15",
+          *birth_month(Month.MARCH,
+                       birth(1, Gender.FEMALE, 28, 1,
+                             child=person("Иумания"),
+                             father=person("Алексей", "Федоров", last_name_orig="Гусев"),
+                             mother=person("Евдокия", "Федорова")),
+                       ),
+          ),
+    *page("15об",
+          *birth_month(Month.MAY,
+                       birth(2, Gender.MALE, 15, 16,
+                             child=person("Петр"),
+                             father=person("Тарас", "Максимов", last_name_orig="Гусев", residence="Старая Верея"),
+                             mother=person("Татьяна", "Макарова")),
+                       ),
+          *birth_month(Month.JULY,
+                       birth(3, Gender.MALE, 15, 15,
+                             child=person("Владимир"),
+                             father=person("Иоанн", "Семенов", last_name_orig="Гусев"),
+                             mother=person("Александра", "Филипова")),
+                       ),
+          ),
+    *page("16",
+          *birth_month(Month.NOVEMBER,
+                       birth(4, Gender.FEMALE, 15, 16,
+                             child=person("Екатерина"),
+                             father=person("Андрей", "Леонтьев", last_name_orig="Ладугин"),
+                             mother=person("Мария", "Дорофеева")),
+                       ),
+          ),
+    defaults=RecordDefaults(
+        residence="Нижняя Верея",
+        status_male=PEASANT_MALE,
+        status_female=PEASANT_FEMALE
+    ),
+)

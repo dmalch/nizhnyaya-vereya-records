@@ -1,0 +1,8 @@
+# Не вычитанные записи, которые уже на Geni — храповик (geni/dsl/ratchet.py).
+# Запись с reviewed=False попадает на Geni, только пока её отпечаток здесь; новая
+# или изменённая без вычитки — держится. Строки только убывают: «Вычитано» в Verso
+# и `make review-ratchet-prune` их вычёркивают; руками сюда не добавлять.
+# файл	отпечаток	запись
+1857/nizhnyaya_vereya_census_1857.py	ce1f83608fcc3ff2	household 17, л. 717об-718
+1857/nizhnyaya_vereya_census_1857.py	3a600f2f9e35d51c	household 18, л. 717об-718
+1857/nizhnyaya_vereya_census_1857.py	40573778aa03b87a	household 35, л. 727об-729

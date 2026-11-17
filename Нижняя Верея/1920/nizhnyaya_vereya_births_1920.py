@@ -1,0 +1,43 @@
+from verso.ru.dsl import (Gender, Month, RecordDefaults, birth, birth_month, birth_records, page,
+                          person)
+from verso.ru.dsl.statuses import PEASANT_FEMALE, PEASANT_MALE
+
+nizhnyaya_vereya_births_1920 = birth_records(
+    "ЦАНО", "2800", "1", "15", "Нижняя Верея", "Николаевская",
+    1920,
+    *page("141 об - 142",
+          *birth_month(Month.FEBRUARY,
+                       birth(1, Gender.FEMALE, 4, 5,
+                             child=person("Клавдия"),
+                             father=person("Феодор", "Семенов", last_name_orig="Гусев"),
+                             mother=person("Александра", "Алексеева"),
+                             god_parent1=person("Федор", "Алексеев"),
+                             god_parent2=person("Анастасия", "Алексеева", last_name_orig="Мудрелова")),
+                       ),
+          ),
+    *page("143 об - 144",
+          *birth_month(Month.MARCH,
+                       birth(1, Gender.MALE, 12, 14,
+                             child=person("Алексей"),
+                             father=person("Павел", "Петров", last_name_orig="Ладугин"),
+                             mother=person("Параскева?", "Павлова"),
+                             god_parent1=person("Андрей", last_name_orig="Ладугин"),
+                             god_parent2=person("Мария", "Павлова", last_name_orig="Клопова")),
+                       ),
+          ),
+    *page("144 об - 145",
+          *birth_month(Month.MAY,
+                       birth(1, Gender.FEMALE, 29, 29,
+                             child=person("Мария"),
+                             father=person("Павел", "Иоаннов", last_name_orig="Гусев"),
+                             mother=person("Анна", "Павлова"),
+                             god_parent1=person("Василий", "Павлов", last_name_orig="Клипов"),
+                             god_parent2=person("Анна", "Алексеева", last_name_orig="Клопова")),
+                       ),
+          ),
+    defaults=RecordDefaults(
+        residence="Нижняя Верея",
+        status_male=PEASANT_MALE,
+        status_female=PEASANT_FEMALE
+    ),
+)
