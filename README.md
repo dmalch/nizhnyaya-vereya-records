@@ -5,6 +5,8 @@
 `Нижняя Верея/ГГГГ/*.py` — книга одного года: записи в том виде, как они написаны в источнике, с
 дореформенной орфографией.
 
+Сайт: <https://dmalch.github.io/nizhnyaya-vereya-records/> — те же записи страницами: книга за книгой, с указателем имён и поиском.
+
 ## Источники
 
 - ГАВО ф. 301 оп. 5 д. 71
@@ -40,7 +42,7 @@
 Нужны Python 3.14 и, лучше, [uv](https://docs.astral.sh/uv/).
 
 ```bash
-make bootstrap   # .venv и verso v0.1.41
+make bootstrap   # .venv и verso v0.1.47
 make check       # линтер DSL и выгрузка записей в JSON (records/)
 ```
 
