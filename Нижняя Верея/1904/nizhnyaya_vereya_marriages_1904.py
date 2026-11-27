@@ -1,7 +1,7 @@
 from verso.ru.dsl import (Month, RecordDefaults, marriage, marriage_month, marriage_records, page,
                           person)
 from verso.ru.dsl.statuses import (PEASANT_DAUGHTER, PEASANT_FEMALE, PEASANT_MAIDEN, PEASANT_MALE,
-                                   PEASANT_SON)
+                                   PEASANT_SON, SOLDIER)
 
 nizhnyaya_vereya_marriages_1904 = marriage_records(
     "ЦАНО", "2800", "1", "14", "Нижняя Верея", "Николаевская",
@@ -9,7 +9,7 @@ nizhnyaya_vereya_marriages_1904 = marriage_records(
     *page("48об-49",
           *marriage_month(Month.SEPTEMBER,
                           marriage(1, 5,
-                                   groom=person("Иоанн", "Феофилактов", last_name_orig="Фролов", status="уволенный в запас армии"), groom_marriage_num=2, groom_age=34,
+                                   groom=person("Иоанн", "Феофилактов", last_name_orig="Фролов", status=SOLDIER, comment="уволенный в запас армии"), groom_marriage_num=2, groom_age=34,
                                    bride=person("Ксения", "Васильева", last_name_orig="Гусева", residence="Старая Верея", status=PEASANT_FEMALE), bride_marriage_num=2, bride_age=24,
                                    witness1=person("Алексей", "Васильев", last_name_orig="Уткин"),
                                    witness2=person("Василий", "Дорофеев", last_name_orig="Орлов"),

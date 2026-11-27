@@ -1,7 +1,7 @@
 from verso.ru.dsl import (Gender, Month, RecordDefaults, Relationship, death, death_month,
                           death_records, page, person, relative)
 from verso.ru.dsl.causes_of_death import COLD, COUGH, NATURAL, PLEURISY, WEAKNESS
-from verso.ru.dsl.statuses import PEASANT_FEMALE, PEASANT_MALE
+from verso.ru.dsl.statuses import PEASANT_FEMALE, PEASANT_MALE, SOLDIER
 
 nizhnyaya_vereya_deaths_1904 = death_records(
     "ЦАНО", "2800", "1", "14", "Нижняя Верея", "Николаевская",
@@ -10,7 +10,7 @@ nizhnyaya_vereya_deaths_1904 = death_records(
           *death_month(Month.MARCH,
                        death(1, Gender.MALE, 13, 15,
                              deceased=person("Иоанн"), age="8 мес",
-                             relatives=[relative(person("Василий", "Леонтьев", last_name_orig="Ладугин", status="уволенный в запас армии"), Relationship.FATHER)],
+                             relatives=[relative(person("Василий", "Леонтьев", last_name_orig="Ладугин", status=SOLDIER, comment="уволенный в запас армии"), Relationship.FATHER)],
                              cause_of_death=WEAKNESS),
                        ),
           ),

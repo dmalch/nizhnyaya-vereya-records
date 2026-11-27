@@ -10,7 +10,7 @@ nizhnyaya_vereya_births_1905 = birth_records(
           *birth_month(Month.FEBRUARY,
                        birth(1, Gender.MALE, 20, 20,
                              child=person("Иоанн"),
-                             father=person("Тимофей", "Ионов", last_name_orig="Ладугин", status="уволенный в запас армии"),
+                             father=person("Тимофей", "Ионов", last_name_orig="Ладугин", status=SOLDIER, comment="уволенный в запас армии"),
                              mother=person("Анна", "Васильева"),
                              god_parent1=person("Феодор", "Васильев", last_name_orig="Пантелеев"),
                              god_parent2=person("Анна", "Ионова", last_name_orig="Гусева")),

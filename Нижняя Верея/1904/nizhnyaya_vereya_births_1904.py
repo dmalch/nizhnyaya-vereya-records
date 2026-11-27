@@ -1,6 +1,6 @@
 from verso.ru.dsl import (Gender, Month, RecordDefaults, birth, birth_month, birth_records, page,
                           person)
-from verso.ru.dsl.statuses import MAIDEN, PEASANT_FEMALE, PEASANT_MALE, PEASANT_SON
+from verso.ru.dsl.statuses import MAIDEN, PEASANT_FEMALE, PEASANT_MALE, PEASANT_SON, SOLDIER
 
 nizhnyaya_vereya_births_1904 = birth_records(
     "ЦАНО", "2800", "1", "14", "Нижняя Верея", "Николаевская",
@@ -49,7 +49,7 @@ nizhnyaya_vereya_births_1904 = birth_records(
           *birth_month(Month.JUNE,
                        birth(5, Gender.MALE, 6, 6,
                              child=person("Феодор"),
-                             father=person("Петр", "Иосифов", "Ладугин", status="уволенный в запас армии"),
+                             father=person("Петр", "Иосифов", "Ладугин", status=SOLDIER, comment="уволенный в запас армии"),
                              mother=person("Агрипина", "Феодорова")),
                        ),
           ),
